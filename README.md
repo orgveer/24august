@@ -22,18 +22,18 @@ The image that we just built is only available to our local Docker engine. In or
 Login into docker hub:
 
 $ docker login
-$ docker push <namespace>/webapp
+$ docker push namespace/webapp
 
 # Step-3: Run the container locally
 Use the docker container run command to run a container with the image created
 
-$ docker run -d -p 5000:5000 <namespace>/webapp
+$ docker run -d -p 5000:5000 namespace/webapp
 
 Use the docker container ls command to get the ID of the running container you just created.
 $ docker container ls
 
 Then use that id to run bash inside that container using the docker container exec command. Since we are using bash and want to interact with this container from our terminal, use the -it flag to run using interactive mode while allocating a psuedo-terminal.
-$ docker container exec -it <containerId> /bin/bash
+$ docker container exec -it containerId /bin/bash
   
 # Step-4: Run the web application locally 
 http://localhost:5000
